@@ -1,0 +1,25 @@
+version: '2'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    networks:
+      - default
+    volumes:
+      - redis:/data
+    command: [redis-server, --appendonly, "yes"]
+  hipache:
+    build: https://github.com/hipache/hipache.git
+    container_name: hipache
+    restart: always
+    networks:
+      - default
+      - proxy 
+    ports:
+      - 80:80
+volumes:
+  redis: ~
+networks:
+  proxy:
+    external: true
