@@ -24,16 +24,14 @@ Create an nginx or apache instance on the hipache network:
 $ docker run --network hipache -d some-image-of-a-front-container # Don't expose the port
 ```
 
-Associate an internal ip (for instance 172.17.0.5) to an external url:
-(update-domain.sh uses a user defined identifier for associating an ip to an url)
+Associate the internal ip (for instance 172.17.0.5) of the front instance to a domain name (www.mydomain.com:
+(see hipache documentation)
 ```
-$ ./update-domain.sh my-site-identifier 172.17.0.5 http://www.my-website.com
+$ docker exec -t redis redis-cli rpush frontend:www.mydomain.com mywebsite # mywebsite is an arbitrary name for design the website
+$ docker exec -t redis redis-cli rpush frontend:www.mydomain.com http://172.17.0.5
 ```
 
-Update the ip:
-```
-$ ./update-domain.sh my-site-identifier 172.17.0.8
-```
+For easily handle website IPs, you can use my hipache-ips.sh bash script in [my script repository](https://github.com/l-vo/scripts)
 
 ## Third-party containers used:
 * https://github.com/hipache/hipache
