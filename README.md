@@ -33,6 +33,13 @@ $ docker exec -t redis redis-cli rpush frontend:www.mydomain.com http://172.17.0
 
 For easily handle website IPs, you can use my hipache-ips.sh bash script in [my script repository](https://github.com/l-vo/scripts)
 
+## Backup
+
+Dump the proxy database into the directory /my-backup:
+```
+$ ./backup.sh /my-backup          # Create a /my-backup/hipache.rdb file
+```
+
 ## Third-party containers used:
 * https://github.com/hipache/hipache
 * https://github.com/docker-library/redis
