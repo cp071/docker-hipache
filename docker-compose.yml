@@ -10,7 +10,7 @@ services:
       - redis:/data
     command: [redis-server, --appendonly, "yes"]
   hipache:
-    build: https://github.com/hipache/hipache.git
+    build: https://github.com/l-vo/hipache.git
     container_name: hipache
     restart: always
     networks:
