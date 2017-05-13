@@ -21,7 +21,7 @@ $ docker-compose up -d
 
 Create an nginx or apache instance on the hipache network:
 ```
-$ docker run --network hipache -d some-image-of-a-front-container # Don't expose the port
+$ docker run --network proxy -d some-image-of-a-front-container # Don't expose the port
 ```
 
 Associate the internal ip (for instance 172.17.0.5) of the front instance to a domain name (www.mydomain.com:
