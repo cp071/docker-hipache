@@ -10,7 +10,7 @@ services:
       - redis:/data
     command: [redis-server, --appendonly, "yes"]
   hipache:
-    build: https://github.com/l-vo/hipache.git
+    image: lvo9/hipache 
     container_name: hipache
     restart: always
     networks:
@@ -23,3 +23,6 @@ volumes:
 networks:
   proxy:
     external: true
+  default:
+    driver_opts:
+      com.docker.network.bridge.name: br-hipache
