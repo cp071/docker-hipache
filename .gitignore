@@ -1,4 +1,5 @@
 /docker-compose.yml
 /hipache/config.json
+/hipache/ssl/*
 
 !.gitkeep

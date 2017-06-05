@@ -25,6 +25,8 @@ Up the composition:
 $ docker-compose up -d
 ```
 
+NOTE: For https mode, you can put your cert files in hipache/ssl; they will be copied in /etc/ssl in the hipache container.
+
 Create an nginx or apache instance on the hipache network:
 ```
 $ docker run --network proxy -d some-image-of-a-front-container # Don't expose the port
