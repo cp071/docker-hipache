@@ -14,6 +14,12 @@ $ docker network create proxy
 
 ## Usage
 
+Install the customizable files
+```
+$ ./install.sh
+```
+Since copied files are not versioned, you can easily use your own settings without changing git working directory state.
+
 Up the composition:
 ```
 $ docker-compose up -d
