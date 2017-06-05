@@ -14,10 +14,18 @@ $ docker network create proxy
 
 ## Usage
 
+Install the customizable files
+```
+$ ./install.sh
+```
+Since copied files are not versioned, you can easily use your own settings without changing git working directory state.
+
 Up the composition:
 ```
 $ docker-compose up -d
 ```
+
+NOTE: For https mode, you can put your cert files in hipache/ssl; they will be copied in /etc/ssl in the hipache container.
 
 Create an nginx or apache instance on the hipache network:
 ```
